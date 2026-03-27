@@ -1,7 +1,7 @@
 {
-  "name": "tagge-shared",
+  "name": "design-tokens",
   "version": "1.0.0",
-  "description": "Shared design tokens and CSS for Tagge apps",
+  "description": "Shared CSS design tokens for all apps in this suite",
   "exports": {
     "./tokens.css": "./tokens.css"
   },

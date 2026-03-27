@@ -1,8 +1,8 @@
-# tagge-shared
+# design-tokens
 
 Shared CSS design tokens consumed by all Tagge apps.
-Install in an app with: `npm install github:timothy-tagge/tagge-shared`
-Import as the first line of `main.jsx`: `import "tagge-shared/tokens.css"`
+Install in an app with: `npm install github:timothy-tagge/design-tokens`
+Import as the first line of `main.jsx`: `import "design-tokens/tokens.css"`
 
 ## What lives here
 - `tokens.css` — All CSS custom properties (design tokens) + dark mode overrides + global resets
@@ -22,7 +22,7 @@ on all primary CTAs so dark mode renders correctly without additional overrides.
 ## Updating tokens
 1. Edit `tokens.css`
 2. `git commit -m "describe change"` + `git push`
-3. In each app: `npm update tagge-shared && npm run build && firebase deploy`
+3. In each app: `npm update design-tokens && npm run build && firebase deploy`
 
 ## Token naming conventions
 - Surface tokens: `--bg`, `--surface`, `--surface-2`
