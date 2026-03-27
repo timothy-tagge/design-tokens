@@ -1,0 +1,15 @@
+{
+  "name": "tagge-shared",
+  "version": "1.0.0",
+  "description": "Shared design tokens and CSS for Tagge apps",
+  "exports": {
+    "./tokens.css": "./tokens.css"
+  },
+  "files": [
+    "tokens.css"
+  ],
+  "keywords": ["design-tokens", "css", "tagge"],
+  "author": "Timothy Tagge",
+  "license": "UNLICENSED",
+  "private": false
+}

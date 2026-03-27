@@ -1,0 +1,166 @@
+/* ═══════════════════════════════════════════════════════════════
+   Tagge Shared Design Tokens  ·  github:timothy-tagge/tagge-shared
+   ───────────────────────────────────────────────────────────────
+   Single source of truth for every Tagge app.
+   Change here → run `npm update tagge-shared` in each app.
+   ═══════════════════════════════════════════════════════════════ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+:root {
+  /* ── Surfaces ────────────────────────────────── */
+  --bg:            #F8FAFC;
+  --surface:       #FFFFFF;
+  --surface-2:     #F1F5F9;
+
+  /* ── Borders ─────────────────────────────────── */
+  --border:        #E2E8F0;
+  --border-strong: #CBD5E1;
+
+  /* ── Text ────────────────────────────────────── */
+  --text:          #0F172A;
+  --text-2:        #475569;
+  --text-muted:    #94A3B8;
+
+  /* ── Green (primary palette) ─────────────────── */
+  --green-900:     #14532D;
+  --green-800:     #166534;
+  --green-700:     #15803D;
+  --green-600:     #16A34A;
+  --green-100:     #DCFCE7;
+  --green-50:      #F0FDF4;
+
+  /* ── Semantic button tokens ──────────────────── */
+  /* Use these on primary CTA buttons so dark mode just works */
+  --btn-primary-bg:   #166534;   /* = --green-800 */
+  --btn-primary-text: #ffffff;
+
+  /* ── Amber ───────────────────────────────────── */
+  --amber-600:     #D97706;
+  --amber-50:      #FFFBEB;
+
+  /* ── Red ─────────────────────────────────────── */
+  --red-600:       #DC2626;
+  --red-50:        #FEF2F2;
+
+  /* ── Blue ────────────────────────────────────── */
+  --blue-600:      #2563EB;
+  --blue-50:       #DBEAFE;
+
+  /* ── Purple ──────────────────────────────────── */
+  --purple-600:    #7C3AED;
+  --purple-50:     #EDE9FE;
+
+  /* ── Shadows ─────────────────────────────────── */
+  --shadow-sm:     0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow:        0 1px 3px 0 rgb(0 0 0 / 0.08), 0 1px 2px -1px rgb(0 0 0 / 0.06);
+  --shadow-md:     0 4px 6px -1px rgb(0 0 0 / 0.08), 0 2px 4px -2px rgb(0 0 0 / 0.06);
+  --shadow-lg:     0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.05);
+
+  /* ── Border radius ───────────────────────────── */
+  --radius-sm:     4px;
+  --radius:        8px;
+  --radius-lg:     12px;
+  --radius-xl:     16px;
+
+  /* ── Typography ──────────────────────────────── */
+  --font-ui:       'Inter', system-ui, -apple-system, sans-serif;
+  --font-display:  'Playfair Display', Georgia, serif;
+  --font-mono:     'JetBrains Mono', 'Fira Code', monospace;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   Dark Mode  (respects OS preference; no JS required)
+   ═══════════════════════════════════════════════════════════════ */
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Surfaces */
+    --bg:            #0F172A;   /* slate-900 */
+    --surface:       #1E293B;   /* slate-800 */
+    --surface-2:     #334155;   /* slate-700 */
+
+    /* Borders */
+    --border:        #334155;
+    --border-strong: #475569;
+
+    /* Text */
+    --text:          #F1F5F9;   /* slate-100 */
+    --text-2:        #CBD5E1;   /* slate-300 */
+    --text-muted:    #64748B;   /* slate-500 */
+
+    /* Green — lightened for dark backgrounds */
+    --green-800:     #4ade80;   /* green-400: readable on dark surface */
+    --green-700:     #86efac;   /* green-300 */
+    --green-600:     #bbf7d0;   /* green-200 */
+    --green-100:     #14532D;   /* chip/panel backgrounds */
+    --green-50:      #052e16;   /* subtle tints */
+
+    /* Button semantic tokens: dark-bg needs dark text on bright green */
+    --btn-primary-bg:   #4ade80;
+    --btn-primary-text: #052e16;
+
+    /* Amber/Red panel fills */
+    --amber-50:      #451a03;
+    --red-50:        #450a0a;
+
+    /* Blue/Purple panel fills */
+    --blue-50:       #1e3a8a;
+    --purple-50:     #3b0764;
+
+    /* Stronger shadows */
+    --shadow-sm:     0 1px 2px 0 rgb(0 0 0 / 0.4);
+    --shadow:        0 1px 3px 0 rgb(0 0 0 / 0.5), 0 1px 2px -1px rgb(0 0 0 / 0.4);
+    --shadow-md:     0 4px 6px -1px rgb(0 0 0 / 0.5), 0 2px 4px -2px rgb(0 0 0 / 0.4);
+    --shadow-lg:     0 10px 15px -3px rgb(0 0 0 / 0.6), 0 4px 6px -4px rgb(0 0 0 / 0.4);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   Global resets and base element styles
+   ═══════════════════════════════════════════════════════════════ */
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-ui);
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1, h2, h3, h4 {
+  margin: 0;
+  line-height: 1.25;
+}
+
+p {
+  margin: 0;
+}
+
+button {
+  font-family: var(--font-ui);
+  cursor: pointer;
+}
+
+input, select, textarea {
+  font-family: var(--font-ui);
+}
+
+input[type="range"] {
+  accent-color: var(--green-700);
+  width: 100%;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
