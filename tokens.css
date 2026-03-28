@@ -72,10 +72,10 @@
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   Dark Mode  (respects OS preference; no JS required)
+   Dark Mode  (OS preference OR explicit data-theme="dark" on <html>)
    ═══════════════════════════════════════════════════════════════ */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
     /* Surfaces */
     --bg:            #0F172A;   /* slate-900 */
     --surface:       #1E293B;   /* slate-800 */
@@ -115,6 +115,33 @@
     --shadow-md:     0 4px 6px -1px rgb(0 0 0 / 0.5), 0 2px 4px -2px rgb(0 0 0 / 0.4);
     --shadow-lg:     0 10px 15px -3px rgb(0 0 0 / 0.6), 0 4px 6px -4px rgb(0 0 0 / 0.4);
   }
+}
+
+/* Explicit override: data-theme="dark" on <html> forces dark regardless of OS */
+[data-theme="dark"] {
+  --bg:            #0F172A;
+  --surface:       #1E293B;
+  --surface-2:     #334155;
+  --border:        #334155;
+  --border-strong: #475569;
+  --text:          #F1F5F9;
+  --text-2:        #CBD5E1;
+  --text-muted:    #64748B;
+  --green-800:     #4ade80;
+  --green-700:     #86efac;
+  --green-600:     #bbf7d0;
+  --green-100:     #14532D;
+  --green-50:      #052e16;
+  --btn-primary-bg:   #4ade80;
+  --btn-primary-text: #052e16;
+  --amber-50:      #451a03;
+  --red-50:        #450a0a;
+  --blue-50:       #1e3a8a;
+  --purple-50:     #3b0764;
+  --shadow-sm:     0 1px 2px 0 rgb(0 0 0 / 0.4);
+  --shadow:        0 1px 3px 0 rgb(0 0 0 / 0.5), 0 1px 2px -1px rgb(0 0 0 / 0.4);
+  --shadow-md:     0 4px 6px -1px rgb(0 0 0 / 0.5), 0 2px 4px -2px rgb(0 0 0 / 0.4);
+  --shadow-lg:     0 10px 15px -3px rgb(0 0 0 / 0.6), 0 4px 6px -4px rgb(0 0 0 / 0.4);
 }
 
 /* ═══════════════════════════════════════════════════════════════
